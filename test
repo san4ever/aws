@@ -1,0 +1,1 @@
+while read shipdate product package customer origin destination  freight fuel total;do c_total=`echo $freight+$fuel |bc`; echo $shipdate $product $c_total >>table1.txt; echo $customer $c_total >>table2.txt;done< <(sed -n '2,$p' input.txt);echo; cat table1.txt;echo;cat table2.txt
